@@ -27,5 +27,5 @@ public class Clock {
         this.second = second;
     }
 
-    
+
 }
