@@ -1,10 +1,23 @@
-/*package tddClass;
+package tddClass;
 
 import org.junit.jupiter.api.Test;
 
-public class AccountTest {
+import java.util.Scanner;
+
+/*public class AccountTest {
 
     @Test
+
+
+
+
+
+
+
+
+
+
+
     public void depositTest() {
         //given
         Account funmiAccount = new Account();

@@ -58,4 +58,10 @@ public class Kata {
     public int getNumberOfCopies() {
         return total;
     }
+
+    public int number(int i, int i1) {
+        int abi = i%i1;
+        return abi;
+    }
+
 }

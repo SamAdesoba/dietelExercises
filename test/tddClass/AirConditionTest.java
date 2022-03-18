@@ -46,4 +46,5 @@ public class AirConditionTest {
         assertEquals(16,decrease.below(14));
 
     }
+
 }

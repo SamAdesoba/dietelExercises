@@ -129,5 +129,10 @@ public class KataTest {
         assertEquals(144000, setUp.getNumberOfCopies());
     }
 
-
+    @Test
+    public void numbers(){
+        Kata sam = new Kata();
+        int abi = sam.number(6,3);
+        assertEquals(0, abi);
+    }
 }
