@@ -1,5 +1,7 @@
 package tddClass;
 
+import java.util.Scanner;
+
 public class Kata {
 
     public int add(int firstNumber, int secondNumber) {
@@ -71,5 +73,57 @@ public class Kata {
         }else
         return false;
     }
+
+
+    public int isBiggest(int firstDigit, int secondDigit, int thirdDigit, int fourthDigit, int fifthDigit) {
+        int a = firstDigit;
+        int b = secondDigit;
+        int c = thirdDigit;
+        int d = fourthDigit;
+        int e = fifthDigit;
+        if (a >= b && a >= c && a >= d && a >= e){
+            return a;
+        }else if(b >= a && b >= c && b >= d && b >= e){
+            return b;
+        }else if(c >= a && c >= b && c >= d && c >= e){
+            return c;
+        }else if(d >= a && d >= b && d >= c && d >= e){
+            return d;
+        }else
+        return e;
+    }
+
+    public int factorOf(int integer) {
+        int i = 1;
+        int counter = 0;
+        while (i <= integer) {
+            if (integer % i == 0) {
+                ++counter;
+            }
+            ++i;
+        }
+
+        return counter;
+    }
+
+    /*public boolean primeNumber(int integer) {
+        boolean result = false;
+        int i = 1;
+        int counter = 0;
+        while (i <= integer){
+            if(integer%i == 0){
+                ++counter;
+            }
+            ++i;
+        }
+        if(counter <= 2) result = true;
+        return result;
+    }*/
+    public boolean primeNumber(int integer){
+        if(factorOf(integer) <= 2) return true;
+        return false;
+
+    }
+
 
 }

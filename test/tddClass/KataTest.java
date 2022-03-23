@@ -2,6 +2,8 @@ package tddClass;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Scanner;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class KataTest {
@@ -141,5 +143,27 @@ public class KataTest {
         number.isEven(8);
         assertTrue(number.isEven(8));
     }
+
+    @Test
+    public void returnTheBiggest(){
+        Kata number = new Kata();
+        number.isBiggest(0,8,3,9,9);
+        assertEquals(99, number.isBiggest(99,9,9,7,5));
+    }
+
+    @Test
+    public void factorsTest(){
+        Kata factors = new Kata();
+        factors.factorOf(49);
+        assertEquals(2, factors.factorOf(7));
+    }
+
+    @Test
+    public void primeFactorTest(){
+        Kata factor = new Kata();
+        factor.primeNumber(5);
+        assertTrue(factor.primeNumber(29));
+    }
+
 
 }
