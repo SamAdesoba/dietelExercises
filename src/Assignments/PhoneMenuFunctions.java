@@ -19,6 +19,9 @@ public class PhoneMenuFunctions {
                         8 -> Games
                         9 -> Calculator
                         10 -> Reminder
+                        11 -> Clock
+                        12 -> Profiles
+                        13 -> SIM services
                         """);
         int Menu = input.nextInt();
         switch (Menu) {
