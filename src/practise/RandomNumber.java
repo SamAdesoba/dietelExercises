@@ -1,0 +1,38 @@
+package practise;
+
+import java.security.SecureRandom;
+
+import java.util.Random;
+ class RandomPickString {
+	static Random myRandom = new Random();
+
+	static String getRandom(String[] arr) {
+		int rdm = myRandom.nextInt(arr.length);
+		return arr[rdm];
+	}
+	static String pickRandom() {
+		String[] operator = {"+", "-", "/", "*", "%"};
+		String r = getRandom(operator);
+		return r;
+	}
+	public static void main(String[] args){
+		System.out.println(pickRandom());
+	}
+}
+
+
+public class RandomNumber {
+	public static void main(String[] args) {
+		SecureRandom randomNumbers = new SecureRandom();
+
+		double randomValue = randomNumbers.nextExponential();
+		int randomValue1 = randomNumbers.nextInt();
+		System.out.println(randomValue);
+		System.out.println("randomValue\trandomValue1\tadefoalrin\tadesoa");
+		System.out.println(randomValue1);
+		System.out.println(randomNumbers.nextInt(10));
+
+
+
+	}
+}
