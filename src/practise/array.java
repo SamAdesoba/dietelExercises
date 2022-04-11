@@ -37,6 +37,20 @@ public class array {
 		System.out.println();
 		System.out.println();
 
+//		for(int i = 0;i<noOfStudents;i++){
+//			for(int j = 0; j<noOfSubjects; j++){
+//				sum = sum + array[i][j];
+//				System.out.print(sum+"\t\t\t");
+//			}
+//			System.out.println();
+//		}
+
+
+
+//		for (int i = 1; i < noOfSubjects; i++) {
+//			System.out.print("   Sum ");
+//		}
+
 		char[][] letters = {{'X','O',' '},{'X','X','X'},{'X','O','X'}};
 		for(int i = 0;i<=2;i++){
 			for(int j = 0; j<=2; j++){

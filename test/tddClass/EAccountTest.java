@@ -10,16 +10,18 @@
 //	private EAccount account;
 //	@BeforeEach
 //	public void sam(){
-//		account = new EAccount("123447","Florence", "funmi", "1234");
+//		account = new account(String accountNumber, String lastName, String firstName, String pin);
 //	}
 //	@Test
 //	public void accountCanBeCreatedTest(){
 //		assertNotNull(account);
 //	}
-
+//
 //	@Test
 //	public void accountCanBeCreatedWithDetails(){
 //		assertEquals("123447",account.getAccountNumber());
+//
+////
 //	}
 //
 //	@Test
@@ -33,6 +35,6 @@
 //		account.withdraw(200,"1234");
 //		assertEquals(1200,account.getbalance("1234"));
 //	}
-
-
+//
+//
 //}

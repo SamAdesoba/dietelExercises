@@ -1,17 +1,17 @@
 //package tddClass;
 //
-//public class EAccount {
+//public class account {
 //	private final String ACCOUNT_NUMBER;
 //	private String fullName;
 //	private String pin;
 //	private int balance;
 //
-//	public EAccount(String accountNumber, String lastName, String firstName, String pin) {
+//	public account() {
 //	ACCOUNT_NUMBER = accountNumber;
 //	fullName = lastName+" "+firstName;
 //	this.pin = pin;
 //	}
-
+//
 //	public String getAccountNumber() {
 //		return ACCOUNT_NUMBER;
 //	}
@@ -34,5 +34,5 @@
 //		return 0;
 //	}
 //}
-
-
+//
+//
