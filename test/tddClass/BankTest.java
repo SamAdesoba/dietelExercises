@@ -28,7 +28,7 @@ public class BankTest {
 	}
 
 	@Test
-	public void createAccountCheckForFirstCustomerTest(){
+	public void createAccountCheckForCustomerByAccountTest(){
 		gtBank.createAccountFor("Saheed","Osupa", "1234");
 		gtBank.createAccountFor("Seyi","Banjo", "1234");
 		gtBank.createAccountFor("Tola","Ruth", "1234");
@@ -36,9 +36,58 @@ public class BankTest {
 		gtBank.createAccountFor("Taiwo","Taye", "1234");
 		assertEquals(5,gtBank.getNumberOfCustomers());
 
-//		Account account = gtBank.findAccount(1);
-//		assertEquals(account.getAccountName());
-//		assertEquals("5", account.getAccountNumber());
+		Account account = gtBank.findAccount(2);
+		assertEquals("Banjo Seyi",account.getAccountName());
+		assertEquals("2", account.getAccountNumber());
 	}
+
+	@Test
+	public void bankCanDepositMoneyTest(){
+		gtBank.createAccountFor("Saheed","Osupa", "1234");
+		gtBank.deposit(1200,"1");
+		gtBank.deposit(1800,"1");
+
+		Account account = gtBank.findAccount(1);
+		assertEquals(3000, account.getBalance("1234"));
+
+	}
+
+	@Test
+	public void bankCanWithdrawMoneyTest(){
+		gtBank.createAccountFor("Saheed","Osupa", "1234");
+		gtBank.deposit(1200,"1");
+		gtBank.withdraw(1000,"1", "1234");
+
+		Account account = gtBank.findAccount(1);
+		assertEquals(200, account.getBalance("1234"));
+
+	}
+
+
+	@Test
+	public void bankCanTransferMoneyTest(){
+		gtBank.createAccountFor("Saheed","Osupa", "1111");
+		gtBank.createAccountFor("Seyi","Banjo", "2222");
+
+
+		gtBank.deposit(1200,"1");
+		Account account = gtBank.findAccount(1);
+		assertEquals(1200, account.getBalance("1111"));
+
+
+		gtBank.transfer(200,"1","2","1111");
+
+		account = gtBank.findAccount(1);
+		assertEquals(1000, account.getBalance("1111"));
+
+		account = gtBank.findAccount(2);
+		assertEquals(200, account.getBalance("2222"));
+
+	}
+
+
+
+
+
 
 }

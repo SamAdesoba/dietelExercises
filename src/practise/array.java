@@ -1,5 +1,7 @@
 package practise;
 
+import java.util.Arrays;
+
 public class array {
 	public static void main(String[] args) {
 		char[][] array = new char[3][3];
@@ -26,30 +28,19 @@ public class array {
 			System.out.println();
 		}
 
-		int[] sam = new int[300];
+		int[] sam = new int[20];
 		for (int i = 0; i < sam.length; i++) {
+			System.out.print(sam[i]+" ");
+
+		}
+		System.out.println();
+		for (int i = sam.length-1;i >= 0; i--) {
+			sam[i]= i+1;
 			System.out.print(sam[i]+" ");
 		}
 		System.out.println();
-		for (int i = 0; i < sam.length; i++) {
-			System.out.print((sam[i]= i+1)+" ");
-		}
-		System.out.println();
 		System.out.println();
 
-//		for(int i = 0;i<noOfStudents;i++){
-//			for(int j = 0; j<noOfSubjects; j++){
-//				sum = sum + array[i][j];
-//				System.out.print(sum+"\t\t\t");
-//			}
-//			System.out.println();
-//		}
-
-
-
-//		for (int i = 1; i < noOfSubjects; i++) {
-//			System.out.print("   Sum ");
-//		}
 
 		char[][] letters = {{'X','O',' '},{'X','X','X'},{'X','O','X'}};
 		for(int i = 0;i<=2;i++){

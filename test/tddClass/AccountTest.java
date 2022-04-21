@@ -17,8 +17,10 @@ public class AccountTest {
 
     @Test
     public void accountCanBeCreatedTest(){
-        assertNotNull(account);
+
+		assertNotNull(account);
     }
+
 	 @Test
 	 public void accountCanBeCreatedWithAccountNumber(){
 		assertEquals("123447", account.getAccountNumber());
@@ -26,7 +28,7 @@ public class AccountTest {
 
 	@Test
 	public void accountCanBeCreatedWithAccountName(){
-		assertEquals("Adesoba"+"Samson", account.getAccountName());
+		assertEquals("Adesoba"+" "+"Samson", account.getAccountName());
 	}
 
 	@Test
@@ -38,28 +40,28 @@ public class AccountTest {
 	@Test
     public void depositTest() {
         account.deposit(100);
-        assertEquals(100, account.getBalance());
+        assertEquals(100, account.getBalance("1234"));
     }
 
 	@Test
 	public void doubleDepositTest() {
 		account.deposit(100);
 		account.deposit(500);
-		assertEquals(600, account.getBalance());
+		assertEquals(600, account.getBalance("1234"));
 	}
 
 	@Test
 	public void negativeDepositTest() {
 		account.deposit(500);
 		account.deposit(-200);
-		assertEquals(500, account.getBalance());
+		assertEquals(500, account.getBalance("1234"));
 	}
 
 	@Test
 	public void withdrawWithPin(){
 		account.deposit(1000);
 		account.withdraw(500, "1234");
-		assertEquals(500,account.getBalance());
+		assertEquals(500,account.getBalance("1234"));
 	}
 
 	@Test
@@ -67,21 +69,21 @@ public class AccountTest {
 		account.deposit(1000);
 		account.withdraw(500, "1234");
 		account.withdraw(300, "1234");
-		assertEquals(200,account.getBalance());
+		assertEquals(200,account.getBalance("1234"));
 	}
 
 	@Test
 	public void withdrawWithWrongPin(){
 		account.deposit(1000);
 		account.withdraw(500, "1235");
-		assertEquals(1000,account.getBalance());
+		assertEquals(1000,account.getBalance("1234"));
 	}
 
 	@Test
 	public void negativeWithdrawWithPin(){
 		account.deposit(1000);
 		account.withdraw(1200, "1235");
-		assertEquals(1000,account.getBalance());
+		assertEquals(1000,account.getBalance("1234"));
 	}
 
 
