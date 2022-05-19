@@ -9,7 +9,9 @@ public class StudentScoreArray {
 	private static double average = 0;
 
 	private static int[][] arrays;
-	private static int[] sumArrays;
+
+
+	private static int[] arraysOfSums;
 
 	private static int[] sortedArrays;
 
@@ -17,18 +19,22 @@ public class StudentScoreArray {
 
 
 	public static void main(String[] args) {
+	students();
+	}
+
+	public static void students(){
 		Scanner input = new Scanner(System.in);
-		System.out.println("Enter the number of subjects ");
+		System.out.print("Enter the number of subjects ");
 		noOfSubjects = input.nextInt();
 
-		System.out.println("Enter the number of students ");
+		System.out.print("Enter the number of students ");
 		noOfStudents = input.nextInt();
 
 
 		arrays = new int[noOfStudents][noOfSubjects];
 		for(int i = 0;i<noOfStudents;i++){
-			System.out.println("Enter the "+noOfSubjects+" scores for student and press enter after each score "+(i+1));
 			for(int j = 0; j<noOfSubjects; j++){
+				System.out.println("Enter student "+(i+1)+" score for subject "+(j+1));
 				arrays[i][j] = input.nextInt();
 			}
 			System.out.println();
@@ -52,31 +58,33 @@ public class StudentScoreArray {
 
 
 		for(int i = 0;i<noOfStudents;i++){
-			sumArrays = new int[arrays[i].length];
+			arraysOfSums = new int[arrays[i].length];
 			System.out.printf("Student %d",(i+1));
-			int sum = 0;
+			int[] sum = new int[noOfStudents];
 			for(int j = 0; j<noOfSubjects; j++){
 				System.out.printf("%8d",arrays[i][j]);
-				sum = sum + arrays[i][j];
-				average = sum/arrays[j].length;
-
-
+				sum[i] += arrays[i][j];
+				average = sum[i]/arrays[j].length;
 
 			}
-			sumArrays[i] = sum;
-			Arrays.sort(sumArrays);
-			System.out.printf("%8d", sum);
+//			arraysOfSums[i] = sum;
+			Arrays.sort(sum);
+			System.out.printf("%8d", sum[i]);
 			System.out.printf("%10.2f", average);
-			System.out.printf("%8d",sumArrays[i]);
+			System.out.printf("%8d", arraysOfSums[i]);
 //			maximumNumber(sumArrays,element);
 			System.out.println();
 		}
 
 
+
 		System.out.println("=========================================================================================");
 		System.out.println("=========================================================================================");
 //		System.out.println("SUBJECT SUMMARY");
-		for (int i = 0; i < sumArrays.length; i++) {
+//		for (int i = 0; i < noOfStudents; i++) {
+//			System.out.println(arraysOfSums[i]);
+//		}
+		for (int i = 0; i < arraysOfSums.length; i++) {
 //			System.out.println("Subject "+(i+1));
 //			System.out.println("Highest scoring student is: Student %d scoring %d");
 //			System.out.println("Highest scoring student is: Student %d scoring %d");
@@ -90,7 +98,7 @@ public class StudentScoreArray {
 //			System.out.println("The overall Lowest score is scored by Student %d in subject %d scoring %d");
 //			System.out.println("======================================================================================");
 
-			}
+		}
 		System.out.println();
 //		System.out.println("CLASS SUMMARY");
 //		System.out.println("======================================================================================");
@@ -107,6 +115,9 @@ public class StudentScoreArray {
 //		System.out.println("======================================================================================");
 
 //		maximumNumber(sumArrays);
+
+
+
 	}
 
 //	private static void maximumNumber(int[] sumArrays) {

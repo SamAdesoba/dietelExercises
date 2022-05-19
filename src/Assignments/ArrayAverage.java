@@ -6,10 +6,10 @@ public class ArrayAverage {
 
 
 	public static void main(String[] args) {
-		breakfast();
+		ArrayAverage();
 	}
 
-	private static void breakfast() {
+	private static void ArrayAverage() {
 		fillArray();
 		printArray();
 		getMax();

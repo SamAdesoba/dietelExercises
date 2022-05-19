@@ -2,7 +2,7 @@ package practise;
 
 import java.util.Arrays;
 
-public class array {
+public class 	array {
 	public static void main(String[] args) {
 		char[][] array = new char[3][3];
 		array[0][0] = 'X';
@@ -46,6 +46,32 @@ public class array {
 		for(int i = 0;i<=2;i++){
 			for(int j = 0; j<=2; j++){
 				System.out.print(letters[i][j]+"  ");
+			}
+			System.out.println();
+		}
+
+		int[][] arrays = {{1, 2, },
+				  				{1, 2, 3},
+				  				{1, 2, 3}};
+		int sum = 0;
+		for (int i = 0; i < arrays.length; i++) {
+			for (int j = 0; j <arrays[i].length; j++) {
+				sum += arrays[i][j];
+			}
+		}
+		System.out.println("The sum of the array is " + sum);
+
+		int[][] b = new int[2][];
+		b[0] = new int[2];
+		b[1] = new int[3];
+
+		b[0][1] = 5;
+		b[1][0] = 5;
+		b[1][1] = 5;
+		b[1][2] = 5;
+		for (int i = 0; i < b.length; i++) {
+			for (int j = 0; j < b[i].length; j++) {
+				System.out.print(b[i][j]+" ");
 			}
 			System.out.println();
 		}

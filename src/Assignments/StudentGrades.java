@@ -17,7 +17,6 @@ public class StudentGrades {
                 "Type the end-of-file indicator to terminate input:",
                 "On UNIX/Linux/macOS type <Ctrl> d then press Enter",
                 "On Windows type <Ctrl> z then press Enter");
-// loop until user enters the end-of-file indicator
         while (input.hasNext()) {
             int grade = input.nextInt(); // read grade
             total += grade; // add grade to total
