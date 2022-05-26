@@ -1,5 +1,6 @@
 package practise;
 
+import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class StudentScoreArray {
 
 	private static int[] arraysOfSums;
 
-	private static int[] sortedArrays;
+	private static int[] sumSorted;
 
 
 
@@ -32,10 +33,11 @@ public class StudentScoreArray {
 
 
 		arrays = new int[noOfStudents][noOfSubjects];
+		SecureRandom random = new SecureRandom();
 		for(int i = 0;i<noOfStudents;i++){
 			for(int j = 0; j<noOfSubjects; j++){
 				System.out.println("Enter student "+(i+1)+" score for subject "+(j+1));
-				arrays[i][j] = input.nextInt();
+				arrays[i][j] = random.nextInt(30,100);
 			}
 			System.out.println();
 		}
@@ -58,7 +60,7 @@ public class StudentScoreArray {
 
 
 		for(int i = 0;i<noOfStudents;i++){
-			arraysOfSums = new int[arrays[i].length];
+			arraysOfSums = new int[noOfStudents];
 			System.out.printf("Student %d",(i+1));
 			int[] sum = new int[noOfStudents];
 			for(int j = 0; j<noOfSubjects; j++){
@@ -67,14 +69,32 @@ public class StudentScoreArray {
 				average = sum[i]/arrays[j].length;
 
 			}
-//			arraysOfSums[i] = sum;
-			Arrays.sort(sum);
+			arraysOfSums[i] = sum[i];
+
 			System.out.printf("%8d", sum[i]);
 			System.out.printf("%10.2f", average);
-			System.out.printf("%8d", arraysOfSums[i]);
-//			maximumNumber(sumArrays,element);
+			System.out.printf("%8d", sumSorted[i]);
 			System.out.println();
+
 		}
+
+		for (int i = 0; i < arraysOfSums.length; i++) {
+			sumSorted = arraysOfSums;
+			int temp;
+			for (int j = 0; j < arraysOfSums.length-1; j++){
+				if (sumSorted[j] < sumSorted[j+1]){
+					temp = sumSorted[j];
+					sumSorted[j] = sumSorted[j+1];
+					sumSorted[j+1] = temp;
+				}
+			}
+
+		}
+
+
+
+
+
 
 
 
@@ -120,17 +140,5 @@ public class StudentScoreArray {
 
 	}
 
-//	private static void maximumNumber(int[] sumArrays) {
-//		int[] sumSorted = sumArrays;
-//		int temp = 0;
-//		for (int i = 0; i < sumSorted.length; i++){
-//				if (sumSorted[i] < sumSorted[i+1]){
-//					temp = sumSorted[i];
-//					sumSorted[i] = sumSorted[i+1];
-//					sumSorted[i+1] = temp;
-//				}
-//				System.out.println(sumSorted[i+1]+" ");
-//		}
 
-//	}
 }

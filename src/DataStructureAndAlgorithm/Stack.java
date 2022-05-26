@@ -7,7 +7,7 @@ public class Stack {
 
 
 	public boolean isEmpty() {
-		if(numberOfNumberElement == 0) return true;
+		if(numberOfNumberElement == 0) return isEmpty;
 		else return false;
 	}
 
@@ -22,7 +22,6 @@ public class Stack {
 	}
 
 	public int peek() {
-
 		return elements[numberOfNumberElement-1];
 	}
 }

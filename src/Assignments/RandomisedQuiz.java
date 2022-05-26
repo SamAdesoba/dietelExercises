@@ -16,7 +16,6 @@ public class RandomisedQuiz {
 				int firstRandomNumber = randomNumbers.nextInt(10);
 				int secondRandomNumber = randomNumbers.nextInt(10);
 				int randomOperator = 1 + randomNumbers.nextInt(4);
-				int result =0;
 				switch (randomOperator){
 					case 1:
 						System.out.println(firstRandomNumber+" "+ "+" +" "+secondRandomNumber+" = "+ "?");
