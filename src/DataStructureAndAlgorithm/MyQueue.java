@@ -4,7 +4,8 @@ public class MyQueue {
 	private int counter;
 	private boolean isEmpty = true;
 	private boolean isNotEmpty =false;
-	private String db[] = new String[4];
+	private int length = 4;
+	private String db[] = new String[length];
 
 	public boolean isEmpty() {
 		if(counter == 0) {
@@ -23,7 +24,20 @@ public class MyQueue {
 	}
 
 	public String peek() {
-		counter = 0;
-		return db[counter];
+		return db[0];
+	}
+
+	public String pop() {
+		counter--;
+		String temp = db[0];
+		db[0] = null;
+		for (int i = 0; i < db.length-1; i++) {
+			db[i] = db[i+1];
+		}
+		return temp;
+	}
+
+	public int size() {
+		return counter;
 	}
 }

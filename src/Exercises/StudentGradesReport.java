@@ -52,7 +52,4 @@ public class StudentGradesReport {
 		}
 	}
 
-//	public int getPositionFor(int indexNumber) {
-//		return 1;
-//	}
 }

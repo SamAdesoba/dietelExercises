@@ -36,6 +36,7 @@ public class QueueTest {
 		queue.push("5");
 		assertFalse(queue.isEmpty());
 		assertFalse(queue.isNotEmpty());
+		assertEquals(4, queue.size());
 	}
 
 	@Test
@@ -50,7 +51,15 @@ public class QueueTest {
 
 	@Test
 	public void queueCanPopFirstElementTest() {
-
+		queue.push("2");
+		queue.push("3");
+		queue.push("4");
+		queue.push("5");
+		assertEquals(4, queue.size());
+		assertEquals("2", queue.peek());
+		queue.pop();
+		assertEquals("3", queue.peek());
+		assertEquals(3, queue.size());
 	}
 
 }

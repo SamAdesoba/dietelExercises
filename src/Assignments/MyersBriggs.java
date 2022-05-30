@@ -293,10 +293,10 @@ public class MyersBriggs {
         extrovertOrIntrovert(extrovertCount, introvertCount);
         sensitiveOrIntuitive(sensitiveCount, intuitiveCount);
         thinkerOrFeeler(thinkerCount, feelerCount);
-        judgingOrperspective(judgingCount, perspectiveCount);
+        judgingOrPerspective(judgingCount, perspectiveCount);
         }
 
-    private static void judgingOrperspective(int judgingCount, int perspectiveCount) {
+    private static void judgingOrPerspective(int judgingCount, int perspectiveCount) {
         if(judgingCount < perspectiveCount){
             System.out.print("J");
         } else System.out.print("P");

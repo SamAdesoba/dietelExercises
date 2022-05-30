@@ -1,12 +1,6 @@
 package practise;
 
-import java.util.Arrays;
-
-public class TikTacToe {
-	public static void main(String[] args) {
-		board();
-	}
-
+public class TikTacToe2 {
 
 	private static char[][] arrays = {{'1', '|', '2', '|', '3'},
 			  									 {'-', '+', '-', '+', '-' },
