@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 public class ArrayListImplementationTest {
 	private
 	ArrayList arrays;
@@ -27,6 +28,7 @@ public class ArrayListImplementationTest {
 	public void canAddElementAndGetByIndexTest() {
 		arrays.add("ade");
 		arrays.add("sam");
+		System.out.println(arrays.get(0));
 		assertEquals("sam", arrays.get(1));
 	}
 
@@ -38,8 +40,7 @@ public class ArrayListImplementationTest {
 		arrays.add("sams");
 		arrays.add("samso");
 		arrays.add("samson");
-		arrays.add(3,"adesoba");
-		assertEquals("adesoba", arrays.get(3));
+		assertEquals("sams", arrays.get(3));
 		assertEquals("samso", arrays.get(4));
 	}
 

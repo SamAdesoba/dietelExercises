@@ -8,7 +8,7 @@ public class HugeInteger {
 	public HugeInteger(int numberOfDigits) {
 		if (numberOfDigits <= maxNumberOfDigits && numberOfDigits > 0) {
 			intArray = new int[numberOfDigits];
-		} else throw new RuntimeException("Value exceeded the maximum required array size;");
+		} else throw new RuntimeException("Value exceeded the maximum required array size");
 	}
 
 	public static String add(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {

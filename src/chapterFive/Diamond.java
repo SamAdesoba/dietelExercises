@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Diamond {
 
 		public static void main(String... args) {
+			System.out.println("Enter an odd number for the number of rolls in your diamond: ");
 			Scanner input = new Scanner(System.in);
 			int number = input.nextInt();
 			if(number==3){

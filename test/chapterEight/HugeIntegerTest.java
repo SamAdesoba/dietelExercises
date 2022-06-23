@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class HugeIntegerTest {
 	private HugeInteger hugeInteger;
 	@BeforeEach
-	public void startWithThis(){
+	public void setUp(){
 		hugeInteger = new HugeInteger(40);
 	}
 	@Test

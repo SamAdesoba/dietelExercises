@@ -1,43 +1,37 @@
 package Exercises;
 
+import java.util.Arrays;
+
 public class ArrayList {
-	private int counter;
+	private static int counter;
 	private static int length = 10;
-	private static String[] arrays = new String[length];;
+	private static String[] arrays = new String[length];
 
 	public void add(String element) {
 		if(counter == 0) {
-			arrays[counter] = element;
+			arrays[counter] =element;
 		}
-		if(counter == arrays.length){
+		if(length == counter){
 			increaseArrayLength();
 		}
 		arrays[counter] = element;
 		counter++;
 	}
 
-	public void add(int index, String element) {
-		if(counter < arrays.length){
-			insertElement(index, element);
-		}
-		if(counter == arrays.length){
-			increaseArrayLength();
-			insertElement(index, element);
-		}
-		counter++;
-	}
 
-	private void insertElement(int index, String element) {
+
+	private void insert(int index, String element) {
 		String[] arrays1 = new String[arrays.length+1];
-		for (int i = 0; i < arrays.length; i++) {
+		for (int i = 0; i < index; i++) {
 			arrays1[i] = arrays[i];
 		}
 		arrays1[index] = element;
 		for (int i = index; i < arrays1.length; i++) {
-			arrays[index +1] = arrays[index];
+			arrays1[index +1] = arrays[index];
 		}
 		arrays=arrays1;
 	}
+
 
 	public int size() {
 		if(counter < 0){

@@ -1,5 +1,6 @@
 package TicTacToe;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Console {
@@ -79,8 +80,13 @@ public class Console {
 	}
 
 	private int input(String input) {
-		print(input);
-		return scanner.nextInt();
+		try {
+			print(input);
+			return scanner.nextInt();
+		}catch (InputMismatchException e){
+			System.out.println("Please enter capital letter");
+		}
+		return input(input);
 	}
 
 	private void print(String display) {

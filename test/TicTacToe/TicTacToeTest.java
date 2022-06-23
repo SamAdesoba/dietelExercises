@@ -22,7 +22,7 @@ public class TicTacToeTest {
 
 	@Test
 	public void boardIsEmptyByDefaultTest() {
-		ticTacToe.position(0,0);
+//		ticTacToe.position(0,0);
 		assertEquals(E, ticTacToe.getPosition(0,0));
 	}
 

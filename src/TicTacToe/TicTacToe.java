@@ -7,9 +7,6 @@ public class TicTacToe {
 	private int move;
 	private boolean player1;
 	private boolean player2;
-	public void position(int row, int column) {
-
-	}
 
 
 	public Elements getPosition(int row, int column) {

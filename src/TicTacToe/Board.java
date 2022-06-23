@@ -1,11 +1,14 @@
 package TicTacToe;
 
+import java.util.Arrays;
+
 import static TicTacToe.Elements.*;
 
 public class Board {
 
 
 	Elements[][] board = new Elements[3][3];
+
 
 	public Board(){
 		for (int i = 0; i < board.length; i++) {
