@@ -38,7 +38,7 @@ public class MyersBriggs {
                                 """);
                         userName = input.next ();
                         if (userName.equals ("A")) sensitiveCount++;
-                        else if (userName.equals ("B")) introvertCount++;
+                        else if (userName.equals ("B")) intuitiveCount++;
                         else {
                             System.out.println ("Wrong Answer ");
                         }
