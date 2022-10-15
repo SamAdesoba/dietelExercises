@@ -3,7 +3,7 @@ package HackerankSolutions;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class StronPassword {
+public class StrongPassword {
 	static int result = 0;
 	public static void main(String[] args) {
 		String s = "2bbbb";
