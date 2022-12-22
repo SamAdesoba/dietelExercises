@@ -4,6 +4,8 @@ import java.security.SecureRandom;
 import java.util.Random;
 import java.util.Scanner;
 
+import static Assignments.AtmCard.CardType.*;
+
 public class AtmCard {
 	private StringBuilder cardNumber;
 	private static CardType cardType;
@@ -18,13 +20,33 @@ public class AtmCard {
 
 
 	public AtmCard(String userFirstName, String userLastName, String userOtherName, String bankName, CardType cardType) {
-		this.cardNumber = generateCardNumberForMasterCards();
-		this.cardType = cardType;
+		if (cardType.equals(MASTER_CARD)){
+			this.cardNumber = generateCardNumberForMasterCards();
+			this.cardType = getMasterCard();
+		} else if (cardType.equals(VISA_CARD)) {
+			this.cardNumber = generateCardNumberForVisaCards();
+			this.cardType = getVisaCard();
+		} else if (cardType.equals(CardType.VERVE)) {
+			this.cardNumber = generateCardNumberForVerveCards();
+			this.cardType = getVerveCard();
+		}
 		this.userFirstName = userFirstName;
 		this.userLastName = userLastName;
 		this.userOtherName = userOtherName;
 		this.bankName = bankName;
 		this.cvv = getCvv();
+	}
+
+	private CardType getVerveCard() {
+		return VERVE;
+	}
+
+	private CardType getVisaCard() {
+		return VISA_CARD;
+	}
+
+	private CardType getMasterCard() {
+		return MASTER_CARD;
 	}
 
 	private StringBuilder getCvv() {
@@ -74,8 +96,8 @@ public class AtmCard {
 		char[] digits = new char[19];
 		digits[0] = '4';
 		digits[1] = '1';
-		digits[2] = '2';
-		digits[3] = '3';
+		digits[2] = '8';
+		digits[3] = '7';
 		digits[4] = ' ';
 		digits[9] = ' ';
 		digits[14] = ' ';
@@ -107,7 +129,7 @@ public class AtmCard {
 	}
 
 	public String getFullName() {
-		return userFirstName + " " + userOtherName + " " + userLastName;
+		return getUserFirstName() + " " + getUserOtherName() + " " + getUserLastName();
 	}
 
 	public StringBuilder getCardNumber() {
@@ -131,7 +153,7 @@ public class AtmCard {
 		return bankName;
 	}
 
-	public void validate(){
+	public void validateCardType(){
 		System.out.println("Please enter the first four digits of your card: ");
 		int number = read.nextInt();
 		int fourDigit = number	 % 10;
@@ -151,13 +173,13 @@ public class AtmCard {
 
 	private static void validateVerveCard(int fourDigit, int thirdDigit, int secondDigit, int firstDigit) {
 		if (firstDigit == 5 && secondDigit == 0 && thirdDigit == 6 && fourDigit == 1){
-			System.out.println("The card you enter is a master card");
+			System.out.println("The card you enter is a verve card");
 		}
 	}
 
 	private static void validateVisaCard(int fourDigit, int thirdDigit, int secondDigit, int firstDigit) {
-		if (firstDigit == 5 && secondDigit == 3 && thirdDigit == 9 && fourDigit == 9){
-			System.out.println("The card you enter is a master card");
+		if (firstDigit == 4 && secondDigit == 1 && thirdDigit == 8 && fourDigit == 7){
+			System.out.println("The card you enter is a visa card");
 		}
 	}
 }
