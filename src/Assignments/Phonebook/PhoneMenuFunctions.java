@@ -1,14 +1,12 @@
-package Assignments;
+package Assignments.Phonebook;
 
 import java.util.Scanner;
 
 public class PhoneMenuFunctions {
 		private static Scanner input = new Scanner(System.in);
 
-		public static void main(String[] args) {
-			menu();
-		}
-		private static void menu() {
+
+		static void menu() {
 			menuList();
 			int menu = input.nextInt();
 			switch (menu) {
@@ -397,7 +395,7 @@ public class PhoneMenuFunctions {
 			switch (phoneBook) {
 				case 1 -> System.out.println("Search");
 				case 2 -> System.out.println("Service Numbers");
-				case 3 -> System.out.println("Add name");
+				case 3 -> addName();
 				case 4 -> System.out.println("Erase");
 				case 5 -> System.out.println("Edit");
 				case 6 -> System.out.println("Assign Tone");
@@ -409,7 +407,16 @@ public class PhoneMenuFunctions {
 			}
 		}
 
-		private static void phoneBookList() {
+	private static void addName() {
+		System.out.println("Enter your name: ");
+		String name = input.next();
+		System.out.println("Enter your phone number: ");
+		String number = input.next();
+		System.out.println("Contact added");
+		System.out.println("Your name is "+ name + "and your number is "+ number);
+	}
+
+	private static void phoneBookList() {
 			System.out.println("Welcome to Phone Book");
 			System.out.println("""
 								Enter:
