@@ -8,7 +8,7 @@ public class Main {
 
 		PapaNosa nosa = new PapaNosa(walk, pray2);
 
-		nosa.pray();
+//		nosa.pray();
 
 
 

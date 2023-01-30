@@ -17,6 +17,10 @@ public class Entry {
 		this.body = body;
 	}
 
+	public Entry(String title) {
+		this.title = title;
+	}
+
 
 	public String getEntryTitle() {
 		return title;
@@ -34,4 +38,6 @@ public class Entry {
 	public String getEntryDate() {
 		return date;
 	}
+
+
 }

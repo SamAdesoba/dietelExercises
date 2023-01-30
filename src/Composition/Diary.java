@@ -1,6 +1,7 @@
 package Composition;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Diary {
 	private String userName;
@@ -8,10 +9,10 @@ public class Diary {
 	private String phoneNumber;
 	private String email;
 	private int numberOfEntries = 0;
-	private Entry entry = new Entry("Adesoba", "Samson");
+	private static Entry entry = new Entry("Adesoba", "Samson");
 	private boolean isLock = true;
 
-	private ArrayList<Entry> entries;
+	private List<Entry> entries;
 	public Diary(String userName, String password, String phoneNumber, String email) {
 		this.userName = userName;
 		this.password = password;
@@ -82,9 +83,6 @@ public class Diary {
 		numberOfEntries--;
 	}
 
-	public void deleteEntryByTitle(String title, String body) {
-
-	}
 
 
 }
