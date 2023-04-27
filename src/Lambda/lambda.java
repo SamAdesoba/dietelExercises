@@ -6,9 +6,9 @@ import java.util.stream.Stream;
 
 public class lambda {
 	public static void main(String[] args) {
-//		IntStream sumOfNumber1 = IntStream.rangeClosed(1, 10).filter(x -> x % 2 == 0);
-//
-//		System.out.println(sumOfNumber1);
+		IntStream sumOfNumber1 = IntStream.rangeClosed(1, 10).filter(x -> x % 2 == 0);
+
+		System.out.println(sumOfNumber1);
 //
 //		int product = IntStream.rangeClosed(1, 5)
 //				  .reduce((acc, el) -> acc * el)
@@ -24,7 +24,7 @@ public class lambda {
 //		System.out.println(product1);
 
 
-		System.out.println(IntStream.rangeClosed(1, 354354).filter((x -> x % 2 != 0)).map(x -> x * x * x).sum());
+//		System.out.println(IntStream.rangeClosed(1, 354354).filter((x -> x % 2 != 0)).map(x -> x * x * x).sum());
 
 
 

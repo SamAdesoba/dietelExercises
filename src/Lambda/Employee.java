@@ -51,7 +51,7 @@ public class Employee {
 				  '}';
 	}
 
-	class Main{
+	static class Main{
 		public static void main(String[] args) {
 			Employee[] employees = {
 					  new Employee("John", "Tola", "JT001", "AA", 100.0),
@@ -76,7 +76,7 @@ public class Employee {
 			System.out.println();
 
 			map.forEach((dept, employeeList) -> {
-				System.out.printf("%s : %.2f",
+				System.out.printf("%s : %.2f", dept,
 						  employeeList.stream()
 									 .mapToDouble(Employee::getSalary)
 									 .sum());
